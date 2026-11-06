@@ -1,0 +1,3426 @@
+ship = SAM - 5 PAC-3 TWS
+version = 1.0.4
+description = Mobile SAM site containing a TWS radar and 5 PAC-3 intercept missiles.
+type = SPH
+size = 4.481799,5.593697,6.585335
+PART
+{
+	part = structuralIBeam2_4294390806
+	partName = Part
+	pos = 0,10,0
+	attPos = 0,0,0
+	attPos0 = 0,10,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wheelMed_4294339656
+	link = wheelMed_4294338932
+	link = wheelMed_4294338702
+	link = wheelMed_4294338414
+	link = scanLockRadar1_4294276002
+	link = structuralIBeam2_4294331134
+	link = structuralPanel1_4294230448
+	link = structuralPanel1_4294229344
+	link = structuralPanel1_4294229168
+	link = structuralPanel1_4294228690
+	link = structuralIBeam1_4294219802
+	attN = bottom,structuralIBeam1_4294219802
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 25
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wheelMed_4294339656
+	partName = Part
+	pos = 0.2008865,9.955136,-1.608305
+	attPos = 0.08870324,-0.07132745,0.04486372
+	attPos0 = 0.1121833,-1.536976,1.832218E-07
+	rot = -2.980233E-08,1,0,2.980231E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = -4.214685E-08,0.7071068,-0.7071068,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wheelMed_4294338932
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheel
+		isEnabled = True
+		brakeTorque = 500
+		brakesEngaged = False
+		steeringLocked = False
+		isDamaged = False
+		invertSteering = False
+		motorEnabled = True
+		brakeTorque_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 30
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			EnableMotor
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Enable Motor
+				guiName = Enable Motor
+				category = Enable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableMotor
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Disable Motor
+				guiName = Disable Motor
+				category = Disable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RepairWheel
+			{
+				active = True
+				guiActive = False
+				guiIcon = Repair Wheel
+				guiName = Repair Wheel
+				category = Repair Wheel
+				guiActiveUnfocused = True
+				unfocusedRange = 4
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleMotorAction
+			{
+				actionGroup = None
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 580
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wheelMed_4294338932
+	partName = Part
+	pos = -0.2008865,9.955136,-1.608303
+	attPos = -0.08870324,-0.07132721,0.04486372
+	attPos0 = -0.1121833,-1.536976,1.832218E-07
+	rot = 0,-7.35137E-08,2.980232E-08,-1
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,-3.090862E-08,7.305546E-08,-0.7071069
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wheelMed_4294339656
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheel
+		isEnabled = True
+		brakeTorque = 500
+		brakesEngaged = False
+		steeringLocked = False
+		isDamaged = False
+		invertSteering = False
+		motorEnabled = True
+		brakeTorque_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 30
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			EnableMotor
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Enable Motor
+				guiName = Enable Motor
+				category = Enable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableMotor
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Disable Motor
+				guiName = Disable Motor
+				category = Disable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RepairWheel
+			{
+				active = True
+				guiActive = False
+				guiIcon = Repair Wheel
+				guiName = Repair Wheel
+				category = Repair Wheel
+				guiActiveUnfocused = True
+				unfocusedRange = 4
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleMotorAction
+			{
+				actionGroup = None
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 580
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wheelMed_4294338702
+	partName = Part
+	pos = 0.2008875,9.925429,1.653713
+	attPos = 0.08897767,0.120248,0.07457066
+	attPos0 = 0.1119098,1.533464,-1.828031E-07
+	rot = -2.980232E-08,1,0,2.980232E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = -4.214685E-08,0.7071068,-0.7071068,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wheelMed_4294338414
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheel
+		isEnabled = True
+		brakeTorque = 500
+		brakesEngaged = False
+		steeringLocked = False
+		isDamaged = False
+		invertSteering = False
+		motorEnabled = True
+		brakeTorque_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 30
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			EnableMotor
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Enable Motor
+				guiName = Enable Motor
+				category = Enable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableMotor
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Disable Motor
+				guiName = Disable Motor
+				category = Disable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RepairWheel
+			{
+				active = True
+				guiActive = False
+				guiIcon = Repair Wheel
+				guiName = Repair Wheel
+				category = Repair Wheel
+				guiActiveUnfocused = True
+				unfocusedRange = 4
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleMotorAction
+			{
+				actionGroup = None
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 580
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wheelMed_4294338414
+	partName = Part
+	pos = -0.2008875,9.925429,1.653713
+	attPos = -0.08897767,0.1202482,0.07457066
+	attPos0 = -0.1119098,1.533464,-1.828031E-07
+	rot = 0,-7.35137E-08,2.980232E-08,-1
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,-3.090862E-08,7.305546E-08,-0.7071069
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wheelMed_4294338702
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleWheel
+		isEnabled = True
+		brakeTorque = 500
+		brakesEngaged = False
+		steeringLocked = False
+		isDamaged = False
+		invertSteering = False
+		motorEnabled = True
+		brakeTorque_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 30
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			EnableMotor
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Enable Motor
+				guiName = Enable Motor
+				category = Enable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableMotor
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Disable Motor
+				guiName = Disable Motor
+				category = Disable Motor
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RepairWheel
+			{
+				active = True
+				guiActive = False
+				guiIcon = Repair Wheel
+				guiName = Repair Wheel
+				category = Repair Wheel
+				guiActiveUnfocused = True
+				unfocusedRange = 4
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleMotorAction
+			{
+				actionGroup = None
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 580
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = scanLockRadar1_4294276002
+	partName = Part
+	pos = -8.924399E-09,10.10208,1.53611
+	attPos = 0,0,0
+	attPos0 = -8.924399E-09,1.536109,-0.1020834
+	rot = 0,1,0,0
+	attRot = 0,0,0,1
+	attRot0 = 0,0.7071068,-0.7071068,0
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleRadar
+		isEnabled = True
+		linked = False
+		linkedVesselID = 
+		rangeIndex = 99
+		radarEnabled = False
+		currentAngle = 0
+		EVENTS
+		{
+			Toggle
+			{
+				active = True
+				guiActive = True
+				guiIcon = 
+				guiName = 
+				category = 
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTurret
+		isEnabled = True
+		maxPitch = 85
+		minPitch = -8
+		yawRange = 360
+		minPitchLimit = -8
+		maxPitchLimit = 85
+		yawRangeLimit = 360
+		maxPitch_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 60
+			stepIncrement = 1
+		}
+		minPitch_UIFlight
+		{
+			controlEnabled = True
+			minValue = 1
+			maxValue = 0
+			stepIncrement = 1
+		}
+		yawRange_UIFlight
+		{
+			controlEnabled = True
+			minValue = 1
+			maxValue = 60
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralIBeam2_4294331134
+	partName = Part
+	pos = -8.91719E-09,11.48615,-0.2640918
+	attPos = 0,0,0
+	attPos0 = -8.91719E-09,-0.2640917,-1.486147
+	rot = 0,0.965926,-0.258819,0
+	attRot = 0.2588191,0,0,0.9659259
+	attRot0 = 0,0.5,-0.8660254,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralIBeam3_4294316440
+	link = structuralIBeam3_4294316048
+	link = structuralPanel1_4294200434
+	link = missileController_4294015468
+	srfN = srfAttach,structuralIBeam2_4294390806
+	attN = top,bahaPac-3_4294301566
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 25
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralIBeam3_4294316440
+	partName = Part
+	pos = 0.9001229,12.64297,-0.933552
+	attPos = 0.01426572,-0.1498597,0.001357128
+	attPos0 = -0.9143879,1.486427,4.454168E-07
+	rot = -0.164942,-0.1994531,-0.7443685,0.6155716
+	attRot = 0.9616229,-0.09107303,0.2576661,-0.02440302
+	attRot0 = 0.7071068,-0.7071068,0,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaPac-3_4294378550
+	link = bahaPac-3_4294311540
+	link = strutConnector_4294073718
+	sym = structuralIBeam3_4294316048
+	srfN = srfAttach,structuralIBeam2_4294331134
+	attN = top,bahaPac-3_4294378550
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 14
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaPac-3_4294378550
+	partName = Part
+	pos = 1.820253,12.49066,-0.84562
+	attPos = 0,0,0
+	attPos0 = -8.420013E-07,0.9367824,-4.470351E-07
+	rot = -0.199453,0.164942,0.6155719,0.7443683
+	attRot = -0.4999999,0.4999999,0.4999999,0.4999999
+	attRot0 = 0,0,1,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaPac-3_4294312068
+	attN = top,structuralIBeam3_4294316440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0
+		decoupleSpeed = 5
+		decoupleForward = True
+		detonationTime = 2
+		cruiseAltitude = 500
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 10
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		detonationTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 2
+			maxValue = 30
+			stepIncrement = 0.5
+		}
+		cruiseAltitude_UIFlight
+		{
+			controlEnabled = True
+			minValue = 30
+			maxValue = 2500
+			stepIncrement = 5
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Jettison
+			{
+				active = True
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaPac-3_4294311540
+	partName = Part
+	pos = 0.9802728,12.84704,-1.051375
+	attPos = 0,0,0
+	attPos0 = -0.2465004,0.03448663,-5.658271E-07
+	rot = -0.02440299,0.2576664,0.961623,0.09107323
+	attRot = 0,-0.7071067,0,-0.7071067
+	attRot0 = 1.791241E-07,-1.791241E-07,-0.7071071,0.7071065
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaPac-3_4294304278
+	srfN = srfAttach,structuralIBeam3_4294316440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0
+		decoupleSpeed = 5
+		decoupleForward = True
+		detonationTime = 2
+		cruiseAltitude = 500
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 10
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		detonationTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 2
+			maxValue = 30
+			stepIncrement = 0.5
+		}
+		cruiseAltitude_UIFlight
+		{
+			controlEnabled = True
+			minValue = 30
+			maxValue = 2500
+			stepIncrement = 5
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Jettison
+			{
+				active = True
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralIBeam3_4294316048
+	partName = Part
+	pos = -0.9001226,12.64297,-0.9335515
+	attPos = -0.01426607,-0.1498607,0.001357178
+	attPos0 = 0.9143879,1.486427,3.560098E-07
+	rot = -0.164942,0.199453,0.7443683,0.615572
+	attRot = 0.9616229,-0.09107303,0.2576661,-0.02440302
+	attRot0 = -0.7071069,-0.7071068,0,0
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaPac-3_4294312068
+	link = bahaPac-3_4294304278
+	link = bahaPac-3_4294301566
+	link = strutConnector_4294073620
+	sym = structuralIBeam3_4294316440
+	srfN = srfAttach,structuralIBeam2_4294331134
+	attN = top,bahaPac-3_4294312068
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 14
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaPac-3_4294312068
+	partName = Part
+	pos = -1.820252,12.49066,-0.845619
+	attPos = 0,0,0
+	attPos0 = 1.009511E-06,0.9367824,-4.470352E-07
+	rot = -0.199453,-0.1649419,-0.6155717,0.7443685
+	attRot = -0.4999999,0.4999999,0.4999999,0.4999999
+	attRot0 = 0,0,-1,-1.264405E-07
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaPac-3_4294378550
+	attN = top,structuralIBeam3_4294316048
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0
+		decoupleSpeed = 5
+		decoupleForward = True
+		detonationTime = 2
+		cruiseAltitude = 500
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 10
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		detonationTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 2
+			maxValue = 30
+			stepIncrement = 0.5
+		}
+		cruiseAltitude_UIFlight
+		{
+			controlEnabled = True
+			minValue = 30
+			maxValue = 2500
+			stepIncrement = 5
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Jettison
+			{
+				active = True
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaPac-3_4294304278
+	partName = Part
+	pos = -0.9802722,12.84704,-1.051374
+	attPos = 0,0,0
+	attPos0 = 0.2465004,0.03448657,-5.658272E-07
+	rot = 0.02440298,0.2576663,0.961623,-0.09107334
+	attRot = 0,-0.7071067,0,-0.7071067
+	attRot0 = 1.791242E-07,1.791241E-07,0.7071071,0.7071066
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaPac-3_4294311540
+	srfN = srfAttach,structuralIBeam3_4294316048
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0
+		decoupleSpeed = 5
+		decoupleForward = True
+		detonationTime = 2
+		cruiseAltitude = 500
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 10
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		detonationTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 2
+			maxValue = 30
+			stepIncrement = 0.5
+		}
+		cruiseAltitude_UIFlight
+		{
+			controlEnabled = True
+			minValue = 30
+			maxValue = 2500
+			stepIncrement = 5
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Jettison
+			{
+				active = True
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaPac-3_4294301566
+	partName = Part
+	pos = -0.04820282,13.00103,-1.14028
+	attPos = 0,0,0
+	attPos0 = 0.2461646,-0.9143881,-1.187521E-07
+	rot = 0.02440287,0.2576661,0.9616231,-0.0910729
+	attRot = 0,0.7071067,0.7071067,0
+	attRot0 = 0,0,0.7071068,0.7071069
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,structuralIBeam3_4294316048
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0
+		decoupleSpeed = 5
+		decoupleForward = True
+		detonationTime = 2
+		cruiseAltitude = 500
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 10
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		detonationTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 2
+			maxValue = 30
+			stepIncrement = 0.5
+		}
+		cruiseAltitude_UIFlight
+		{
+			controlEnabled = True
+			minValue = 30
+			maxValue = 2500
+			stepIncrement = 5
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Jettison
+			{
+				active = True
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294230448
+	partName = Part
+	pos = 0.6118875,9.997968,0.530646
+	attPos = 0,0,0
+	attPos0 = 0.6118875,0.5306453,0.002032217
+	rot = 1,2.980232E-08,2.980232E-08,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,4.214685E-08,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel1_4294201150
+	sym = structuralPanel1_4294229344
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294229344
+	partName = Part
+	pos = -0.6118875,9.997968,0.530646
+	attPos = 0,0,0
+	attPos0 = -0.6118875,0.5306454,0.002032217
+	rot = -1.390908E-08,0,1,2.980233E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = -3.090862E-08,0.7071068,0.7071068,1.123822E-08
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel1_4294201536
+	sym = structuralPanel1_4294230448
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294229168
+	partName = Part
+	pos = 0.6118875,9.998929,-0.4670348
+	attPos = 0,0,0
+	attPos0 = 0.6118875,-0.4670341,0.001071032
+	rot = 1,2.980232E-08,2.980232E-08,0
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0.7071068,4.214685E-08,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294228690
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294228690
+	partName = Part
+	pos = -0.6118875,9.998929,-0.4670347
+	attPos = 0,0,0
+	attPos0 = -0.6118875,-0.467034,0.001071032
+	rot = -1.390908E-08,0,1,2.980233E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = -3.090862E-08,0.7071068,0.7071068,1.123822E-08
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294229168
+	srfN = srfAttach,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralIBeam1_4294219802
+	partName = Part
+	pos = 0,10,-2.126956
+	attPos = 0,0,0
+	attPos0 = 0,-2.126954,2.535526E-07
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel2_4294219266
+	attN = top,structuralIBeam2_4294390806
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 50
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel2_4294219266
+	partName = Part
+	pos = -0.002553155,10.73686,-3.296155
+	attPos = 0,0,0
+	attPos0 = -0.002553155,-1.169196,-0.7368621
+	rot = -0.6408564,-0.2988363,0.6408564,0.2988363
+	attRot = 0,0,0.4226183,-0.9063078
+	attRot0 = -0.664463,0.2418447,0.664463,-0.2418447
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,structuralIBeam1_4294219802
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 90
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294201536
+	partName = Part
+	pos = -0.7904947,10.38381,0.1150712
+	attPos = 0,0,0
+	attPos0 = 0.1786072,-0.3858442,-0.4155749
+	rot = 0,0,-0.4226184,-0.9063079
+	attRot = 0,0,-0.9063079,0.4226184
+	attRot0 = -1.260591E-08,5.878232E-09,0.9063078,-0.4226183
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294201150
+	srfN = srfAttach,structuralPanel1_4294229344
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294201150
+	partName = Part
+	pos = 0.7904947,10.38381,0.1150705
+	attPos = 0,0,0
+	attPos0 = 0.1786072,-0.3858442,0.4155751
+	rot = 0.4226183,0.9063079,0,-4.214685E-08
+	attRot = 0,0,-0.9063079,0.4226184
+	attRot0 = 6.662605E-08,5.878227E-09,-0.9063078,0.4226183
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294201536
+	srfN = srfAttach,structuralPanel1_4294230448
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294200434
+	partName = Part
+	pos = -7.746788E-08,10.7594,0.1171416
+	attPos = 0,-0.0565449,-0.2974648
+	attPos0 = 6.855062E-08,-0.7634567,0.3306828
+	rot = 0.7071068,6.322028E-08,-0.7071068,-6.322028E-08
+	attRot = 0,0,-0.9659258,-0.2588191
+	attRot0 = 0.6830127,0.1830127,0.6830127,0.1830127
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel1_4294198090
+	link = rtg_4294155780
+	srfN = srfAttach,structuralIBeam2_4294331134
+	attN = top,rtg_4294155780
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294198090
+	partName = Part
+	pos = -4.369771E-07,10.76105,-0.8843236
+	attPos = 0,0,0
+	attPos0 = 1.001463,-0.001654269,3.098748E-07
+	rot = 0.7071065,-8.42937E-08,-0.7071072,1.053671E-07
+	attRot = 0,0,0,1
+	attRot0 = -3.085988E-14,-3.371748E-07,1.192093E-07,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel1_4294197646
+	link = structuralPanel1_4294196412
+	link = structuralPanel1_4294195998
+	link = seatExternalCmd_4294147088
+	link = roverBody_4294130846
+	srfN = srfAttach,structuralPanel1_4294200434
+	attN = top,roverBody_4294130846
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294197646
+	partName = Part
+	pos = -1.136944E-06,10.75831,-1.885895
+	attPos = 0,0,0
+	attPos0 = 1.001571,0.002741003,-2.524534E-08
+	rot = 0.7071065,0,-0.7071072,4.214685E-08
+	attRot = 0,0,0,1
+	attRot0 = -2.512157E-15,-1.685874E-07,4.470345E-08,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralPanel1_4294197260
+	link = structuralPanel1_4294195882
+	link = structuralPanel1_4294195418
+	link = rtg_4294156392
+	srfN = srfAttach,structuralPanel1_4294198090
+	attN = top,rtg_4294156392
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294197260
+	partName = Part
+	pos = -2.086277E-06,10.75648,-2.88604
+	attPos = 0,0,0
+	attPos0 = 1.000142,0.001833819,-1.120336E-07
+	rot = 0.7071064,-4.214685E-08,-0.7071073,1.264406E-07
+	attRot = 0,0,0,1
+	attRot0 = -1.632896E-14,-2.528811E-07,7.450581E-08,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutConnector_4294150828
+	srfN = srfAttach,structuralPanel1_4294197646
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294196412
+	partName = Part
+	pos = -0.953416,10.54913,-0.8843237
+	attPos = 0,0,0
+	attPos0 = 3.358327E-07,0.2119208,0.9534145
+	rot = 2.844913E-07,-8.42937E-08,0.9762961,-0.2164395
+	attRot = 3.633525E-09,8.055331E-10,0.2164397,0.9762961
+	attRot0 = 0.1530458,0.6903456,-0.1530458,-0.6903456
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294195998
+	srfN = srfAttach,structuralPanel1_4294198090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294195998
+	partName = Part
+	pos = 0.953415,10.54913,-0.8843233
+	attPos = 0,0,0
+	attPos0 = -7.116183E-07,0.2119208,-0.9534148
+	rot = -0.9762962,0.2164394,-3.161014E-07,4.214685E-08
+	attRot = 3.633525E-09,8.055331E-10,0.2164397,0.9762961
+	attRot0 = -0.1530458,-0.6903461,-0.1530457,-0.6903451
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294196412
+	srfN = srfAttach,structuralPanel1_4294198090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294195882
+	partName = Part
+	pos = -0.9533368,10.55036,-1.885894
+	attPos = 0,0,0
+	attPos0 = 5.784515E-07,0.2079535,0.9533347
+	rot = 4.425419E-07,-4.214685E-08,0.9762962,-0.2164395
+	attRot = 3.633525E-09,8.055331E-10,0.2164397,0.9762961
+	attRot0 = 0.1530458,0.6903456,-0.1530458,-0.6903456
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294195418
+	srfN = srfAttach,structuralPanel1_4294197646
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = structuralPanel1_4294195418
+	partName = Part
+	pos = 0.9533353,10.55036,-1.885894
+	attPos = 0,0,0
+	attPos0 = -1.137313E-06,0.2079535,-0.9533354
+	rot = -0.9762961,0.2164395,-4.425419E-07,4.214685E-08
+	attRot = 3.633525E-09,8.055331E-10,0.2164397,0.9762961
+	attRot0 = -0.153046,-0.6903463,-0.1530457,-0.6903448
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralPanel1_4294195882
+	srfN = srfAttach,structuralPanel1_4294197646
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 30
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = rtg_4294156392
+	partName = Part
+	pos = -1.371322E-06,10.40401,-1.885896
+	attPos = 0,0,0
+	attPos0 = 3.998639E-07,0.3543015,2.528555E-07
+	rot = 1,-2.512148E-14,-1.264406E-07,4.214685E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 6.322027E-08,0.7071071,-4.214685E-08,0.7071065
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = bottom,structuralPanel1_4294197646
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleGenerator
+		isEnabled = True
+		generatorIsActive = False
+		throttle = 0
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Generator
+				guiName = Activate Generator
+				category = Activate Generator
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = True
+				guiActive = True
+				guiIcon = Shutdown Generator
+				guiName = Shutdown Generator
+				category = Shutdown Generator
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 23300
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = strutConnector_4294150828
+	partName = CompoundPart
+	pos = 0.002669852,10.73929,-3.07484
+	attPos = 0,0,0
+	attPos0 = 0.1888011,0.01718802,-0.002672223
+	rot = 0.5000001,0.5000001,0.5000001,0.4999999
+	attRot = 0,0,0,1
+	attRot0 = -0.7071067,0.7071069,4.012723E-07,-4.644926E-07
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,structuralPanel1_4294197260
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294219266
+		pos = -0.1497193,-0.07596851,0.002005254
+		rot = 4.276896E-15,1.088663E-07,0.4226185,0.906308
+		dir = -0.8917061,-0.4524573,0.011943
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = seatExternalCmd_4294147088
+	partName = Part
+	pos = -9.391364E-07,10.9772,-1.328993
+	attPos = 0,0,0
+	attPos0 = 0.4446711,-0.2161483,1.146704E-07
+	rot = -0.7071072,-2.107341E-08,-2.95028E-07,-0.7071066
+	attRot = 0,0,-0.9999999,0
+	attRot0 = 0.4999996,-0.5000005,-0.5000001,-0.4999998
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,structuralPanel1_4294198090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = KerbalSeat
+		isEnabled = True
+		EVENTS
+		{
+			BoardSeat
+			{
+				active = True
+				guiActive = False
+				guiIcon = Board
+				guiName = Board 
+				category = Board
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+	}
+}
+PART
+{
+	part = rtg_4294155780
+	partName = Part
+	pos = -9.066666E-08,10.4051,0.1171418
+	attPos = 0,0,0
+	attPos0 = -3.523577E-07,0.3543024,1.055904E-08
+	rot = 1,9.854053E-18,-2.640385E-18,8.42937E-08
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = -6.322028E-08,0.7071068,6.322028E-08,0.7071068
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = bottom,structuralPanel1_4294200434
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleGenerator
+		isEnabled = True
+		generatorIsActive = False
+		throttle = 0
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Generator
+				guiName = Activate Generator
+				category = Activate Generator
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = True
+				guiActive = True
+				guiIcon = Shutdown Generator
+				guiName = Shutdown Generator
+				category = Shutdown Generator
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 23300
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = roverBody_4294130846
+	partName = Part
+	pos = -5.560498E-07,10.50941,-0.8843239
+	attPos = 0,0,0
+	attPos0 = 1.792054E-07,0.2516413,1.321967E-07
+	rot = -8.42937E-08,1.256074E-15,-1.490112E-08,-1
+	attRot = 0.7071067,0,0,-0.7071067
+	attRot0 = 0.7071065,0,-0.7071071,-2.107342E-08
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,structuralPanel1_4294198090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		controlSrcStatusText = 
+		EVENTS
+		{
+			MakeReference
+			{
+				active = True
+				guiActive = True
+				guiIcon = Control From Here
+				guiName = Control From Here
+				category = Control From Here
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RenameVessel
+			{
+				active = True
+				guiActive = True
+				guiIcon = Rename Vessel
+				guiName = Rename Vessel
+				category = Rename Vessel
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		standaloneToggle_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 100
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 800
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 120
+		maxAmount = 120
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = strutConnector_4294073718
+	partName = CompoundPart
+	pos = 1.520692,12.42686,-0.8433234
+	attPos = 0,0,0
+	attPos0 = 0.1116394,0.6531402,-0.02991393
+	rot = 0.75953,0.6363387,-0.06637126,0.1173986
+	attRot = 0,0,0,1
+	attRot0 = 7.231961E-07,0.9914449,-1.087722E-07,-0.1305262
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4294073620
+	srfN = srfAttach,structuralIBeam3_4294316440
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294195998
+		pos = -1.724476,-0.4686967,0.8331717
+		rot = 0,0.1105346,0.1359814,0.9845259
+		dir = -0.8746065,-0.2377099,0.4225607
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = strutConnector_4294073620
+	partName = CompoundPart
+	pos = -1.520693,12.42686,-0.8433231
+	attPos = 0,0,0
+	attPos0 = -0.1116397,0.6531405,-0.0299143
+	rot = -0.06637126,0.1173986,0.7595302,0.6363385
+	attRot = 0,0,0,1
+	attRot0 = -1.25722E-07,-0.1305261,1.152554E-06,0.9914449
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4294073718
+	srfN = srfAttach,structuralIBeam3_4294316048
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294196412
+		pos = -1.724476,-0.4686956,-0.8331703
+		rot = 0,-0.1105345,0.1359812,0.9845259
+		dir = -0.8746073,-0.2377091,-0.4225611
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = missileController_4294015468
+	partName = Part
+	pos = -1.786161E-08,12.36261,-0.6935476
+	attPos = 0,0,0
+	attPos0 = 8.944418E-09,0.9737673,-0.06631189
+	rot = 0.5000004,0,0,0.8660254
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.7071065,0.7071071,0
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,structuralIBeam2_4294331134
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileFire
+		isEnabled = True
+		weaponIndex = 0
+		rippleRPM = 650
+		rippleFire = False
+		targetScanInterval = 12
+		guardAngle = 320
+		guardRange = 2500
+		guardMode = False
+		team = False
+		isArmed = False
+		team_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			ToggleToolbarGUI
+			{
+				active = True
+				guiActive = True
+				guiIcon = Open GUI
+				guiName = Open GUI
+				category = Open GUI
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGToggleGuardMode
+			{
+				actionGroup = None
+			}
+			AGToggleTargetType
+			{
+				actionGroup = None
+			}
+			AGJettisonWeapon
+			{
+				actionGroup = None
+			}
+			AGToggleTeam
+			{
+				actionGroup = None
+			}
+			AGToggleArm
+			{
+				actionGroup = None
+			}
+			AGFire
+			{
+				actionGroup = None
+			}
+			AGCycle
+			{
+				actionGroup = None
+			}
+			AGCycleBack
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = RadarWarningReceiver
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CollisionFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}

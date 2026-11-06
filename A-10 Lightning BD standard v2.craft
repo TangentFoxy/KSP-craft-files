@@ -1,0 +1,7231 @@
+ship = A-10 Lightning BD standard v2
+version = 0.90.0
+description = 1. Previous weapon.¨2. Fire selected weapon.¨3. Next weapon.¨4. Countermeasures.¨9. Toggle intakes/engines.¨0. Switch to main cannon.
+type = SPH
+size = 14.91783,3.649545,11.58317
+PART
+{
+	part = Mark2Cockpit_4293191196
+	partName = Part
+	pos = -3.112159E-05,1.942621,-4.347057E-05
+	attPos = 0,0,0
+	attPos0 = -3.112159E-05,1.942621,-4.347057E-05
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0.7071068,0,0,0.7071068
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = noseConeAdapter_4293191090
+	link = MK1Fuselage_4293191034
+	link = SmallGearBay_4293190492
+	link = missileController_4293189666
+	link = baha30mmAmmo_4293189630
+	link = baha30mmAmmo_4293189602
+	attN = top,noseConeAdapter_4293191090
+	attN = bottom,MK1Fuselage_4293191034
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		controlSrcStatusText = 
+		EVENTS
+		{
+			MakeReference
+			{
+				active = True
+				guiActive = True
+				guiIcon = Control From Here
+				guiName = Control From Here
+				category = Control From Here
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RenameVessel
+			{
+				active = True
+				guiActive = True
+				guiIcon = Rename Vessel
+				guiName = Rename Vessel
+				category = Rename Vessel
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		stateString = Active
+		WheelState = Active
+		EVENTS
+		{
+			OnToggle
+			{
+				active = True
+				guiActive = True
+				guiIcon = Toggle Torque
+				guiName = Toggle Torque
+				category = Toggle Torque
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		EVENTS
+		{
+			DeployExperiment
+			{
+				active = True
+				guiActive = True
+				guiIcon = Deploy
+				guiName = Deploy
+				category = Deploy
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			CollectDataExternalEvent
+			{
+				active = True
+				guiActive = False
+				guiIcon = 
+				guiName = 
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 1.5
+				externalToEVAOnly = True
+			}
+			ReviewDataEvent
+			{
+				active = True
+				guiActive = True
+				guiIcon = Review Data
+				guiName = Review Data
+				category = Review Data
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ResetExperiment
+			{
+				active = True
+				guiActive = True
+				guiIcon = Reset
+				guiName = Reset
+				category = Reset
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			ResetExperimentExternal
+			{
+				active = True
+				guiActive = False
+				guiIcon = Reset
+				guiName = Reset
+				category = Reset
+				guiActiveUnfocused = True
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			ResetAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		EVENTS
+		{
+			StoreDataExternalEvent
+			{
+				active = False
+				guiActive = False
+				guiIcon = 
+				guiName = Store Experiments (0)
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 1.3
+				externalToEVAOnly = True
+			}
+			CollectDataExternalEvent
+			{
+				active = False
+				guiActive = False
+				guiIcon = 
+				guiName = Take Data (0)
+				category = 
+				guiActiveUnfocused = True
+				unfocusedRange = 1.3
+				externalToEVAOnly = True
+			}
+			ReviewDataEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Review Data
+				guiName = Review Stored Data (0)
+				category = Review Data
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = False
+		EVENTS
+		{
+			ToggleFlag
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = ToggleFlag
+				guiName = ToggleFlag
+				category = ToggleFlag
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 0
+		maxAmount = 7.5
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = noseConeAdapter_4293191090
+	partName = Part
+	pos = -3.112159E-05,1.942621,1.487461
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293191062
+	link = bahaGau-8_4293189786
+	attN = top,standardNoseCone_4293191062
+	attN = bottom01,Mark2Cockpit_4293191196
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = standardNoseCone_4293191062
+	partName = Part
+	pos = -3.112159E-05,1.942621,2.353718
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = bottom01,noseConeAdapter_4293191090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = MK1Fuselage_4293191034
+	partName = Part
+	pos = -3.112159E-05,1.942621,-1.906301
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = MK1Fuselage_4293191000
+	link = IntakeRadialLong_4293189574
+	link = IntakeRadialLong_4293188964
+	attN = top,Mark2Cockpit_4293191196
+	attN = bottom,MK1Fuselage_4293191000
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = MK1Fuselage_4293191000
+	partName = Part
+	pos = -3.112159E-05,1.942621,-3.781344
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = MK1Fuselage_4293190966
+	link = MK1Fuselage_4293190202
+	link = MK1Fuselage_4293190112
+	attN = top,MK1Fuselage_4293191034
+	attN = bottom,MK1Fuselage_4293190966
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = MK1Fuselage_4293190966
+	partName = Part
+	pos = -3.112159E-05,1.942621,-5.656349
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralIBeam3_4293190932
+	link = strutConnector_4293190314
+	link = strutConnector_4293190258
+	attN = top,MK1Fuselage_4293191000
+	attN = bottom,structuralIBeam3_4293190932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = structuralIBeam3_4293190932
+	partName = Part
+	pos = -3.112159E-05,1.942621,-7.396351
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,0,0,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector3_4293190912
+	link = wingConnector3_4293190760
+	link = noseConeAdapter_4293190608
+	attN = top,noseConeAdapter_4293190608
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = wingConnector3_4293190912
+	partName = Winglet
+	pos = -0.1119764,1.942621,-7.303098
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071655,-6.383281E-05,6.383281E-05,0.7070482
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector5_4293190882
+	link = elevon2_4293190552
+	sym = wingConnector3_4293190760
+	srfN = srfAttach,structuralIBeam3_4293190932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = wingConnector5_4293190882
+	partName = Winglet
+	pos = -1.957603,2.036422,-7.596042
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.5000868,0.5000036,0.4999962,-0.4999137
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralWing4_4293190852
+	link = smallCtrlSrf_4293190820
+	link = smallCtrlSrf_4293190790
+	sym = wingConnector5_4293190730
+	srfN = srfAttach,wingConnector3_4293190912
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = structuralWing4_4293190852
+	partName = Part
+	pos = -1.957688,2.532923,-7.127082
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -5.866842E-05,-0.7070432,-5.837339E-05,-0.7071707
+	attRot = 0,0.9999999,-5.960464E-08,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralWing4_4293190700
+	srfN = srfAttach,wingConnector5_4293190882
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLiftingSurface
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = smallCtrlSrf_4293190820
+	partName = Part
+	pos = -1.957604,3.482529,-8.064575
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.5000452,0.5000452,0.4999548,-0.4999551
+	attRot = 0,0.7071068,-4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = smallCtrlSrf_4293190668
+	srfN = srfAttach,wingConnector5_4293190882
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = False
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = smallCtrlSrf_4293190790
+	partName = Part
+	pos = -1.957603,2.621943,-8.064721
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.5000452,0.5000452,0.4999548,-0.4999551
+	attRot = 0,0.7071068,-4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = smallCtrlSrf_4293190638
+	srfN = srfAttach,wingConnector5_4293190882
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = False
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wingConnector3_4293190760
+	partName = Winglet
+	pos = 0.1119143,1.942621,-7.303098
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 6.38019E-05,0.7070482,0.7071655,-6.386372E-05
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector5_4293190730
+	link = elevon2_4293190522
+	sym = wingConnector3_4293190912
+	srfN = srfAttach,structuralIBeam3_4293190932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = wingConnector5_4293190730
+	partName = Winglet
+	pos = 1.957583,2.036422,-7.596042
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.4999966,0.4999134,0.5000866,-0.5000036
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = structuralWing4_4293190700
+	link = smallCtrlSrf_4293190668
+	link = smallCtrlSrf_4293190638
+	sym = wingConnector5_4293190882
+	srfN = srfAttach,wingConnector3_4293190760
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = structuralWing4_4293190700
+	partName = Part
+	pos = 1.957668,2.532923,-7.127083
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 5.868949E-05,0.7071706,5.710898E-05,0.7070431
+	attRot = 0,0.9999999,-5.960464E-08,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = structuralWing4_4293190852
+	srfN = srfAttach,wingConnector5_4293190730
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLiftingSurface
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = smallCtrlSrf_4293190668
+	partName = Part
+	pos = 1.957583,3.482527,-8.064575
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.5000451,0.5000452,0.4999547,0.4999552
+	attRot = 0,-0.7071068,4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = smallCtrlSrf_4293190820
+	srfN = srfAttach,wingConnector5_4293190730
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = False
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = smallCtrlSrf_4293190638
+	partName = Part
+	pos = 1.957583,2.621941,-8.064721
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.5000451,0.5000452,0.4999547,0.4999552
+	attRot = 0,-0.7071068,4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = smallCtrlSrf_4293190790
+	srfN = srfAttach,wingConnector5_4293190730
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = False
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = noseConeAdapter_4293190608
+	partName = Part
+	pos = -3.112159E-05,1.942621,-7.143883
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -1.256074E-15,0.7071068,-0.7071069,-1.256074E-15
+	attRot = 0,0.9999999,-5.960464E-08,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293190580
+	attN = top,standardNoseCone_4293190580
+	attN = bottom01,structuralIBeam3_4293190932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = standardNoseCone_4293190580
+	partName = Part
+	pos = -3.112159E-05,1.942621,-8.010148
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 1.256074E-15,0.7071068,-0.7071068,-1.256074E-15
+	attRot = 1.776357E-15,0.9999999,-5.960464E-08,-2.117582E-22
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = bottom01,noseConeAdapter_4293190608
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = elevon2_4293190552
+	partName = Part
+	pos = -0.914428,1.942621,-8.240778
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.7071068,0.0001224998,-5.310514E-06,-0.7071068
+	attRot = -0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon2_4293190522
+	srfN = srfAttach,wingConnector3_4293190912
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = False
+		ignoreYaw = True
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = elevon2_4293190522
+	partName = Part
+	pos = 0.9143756,1.942621,-8.240778
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 5.279593E-06,0.7071068,0.7071069,-0.0001225307
+	attRot = 0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon2_4293190552
+	srfN = srfAttach,wingConnector3_4293190760
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = False
+		ignoreYaw = True
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = SmallGearBay_4293190492
+	partName = Part
+	pos = 0.4461944,1.312641,0.4818442
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -1.685874E-07,-1.047876E-07,3.698187E-08,-1
+	attRot = -3.284302E-17,-2.280972E-08,-0.3826835,0.9238796
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,Mark2Cockpit_4293191196
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLandingGear
+		isEnabled = True
+		brakesEngaged = False
+		brakesEnabled = False
+		storedGearState = UNDEFINED
+		storedAnimationSpeed = 0
+		storedAnimationTime = 0
+		StartDeployed = True
+		StartDeployed_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			EnableBrakes
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Enable brakes
+				guiName = Enable brakes
+				category = Enable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableBrakes
+			{
+				active = False
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Disable brakes
+				guiName = Disable brakes
+				category = Disable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LowerLandingGear
+			{
+				active = False
+				guiActive = True
+				guiIcon = Lower Gear
+				guiName = Lower Gear
+				category = Lower Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RaiseLandingGear
+			{
+				active = True
+				guiActive = True
+				guiIcon = Raise Gear
+				guiName = Raise Gear
+				category = Raise Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = Gear
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+				active = False
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleSteering
+		isEnabled = True
+		steeringLocked = False
+		invertSteering = False
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		lightR_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightG_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightB_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		EVENTS
+		{
+			LightsOff
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights Off
+				guiName = Lights Off
+				category = Lights Off
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LightsOn
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights On
+				guiName = Lights On
+				category = Lights On
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = strutConnector_4293190314
+	partName = CompoundPart
+	pos = -0.6236241,1.942621,-6.045251
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.7071068,0,0,-0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4293190258
+	srfN = srfAttach,MK1Fuselage_4293190966
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4293190912
+		pos = -0.04465503,-0.3204479,-0.01095005
+		rot = 0,0,0,0
+		dir = -0.1379407,-0.9898627,-0.03382625
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = strutConnector_4293190258
+	partName = CompoundPart
+	pos = 0.623562,1.942621,-6.045251
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -3.090863E-08,0.7071068,0.7071068,-3.090862E-08
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4293190314
+	srfN = srfAttach,MK1Fuselage_4293190966
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4293190760
+		pos = -0.04465431,-0.3204479,0.010951
+		rot = 0,0,0,0
+		dir = -0.1379408,-0.9898629,0.03382649
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = MK1Fuselage_4293190202
+	partName = Part
+	pos = -1.109488,2.519012,-4.693744
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.3799727,-0.5964164,-0.5963193,0.3798836
+	attRot = 2.912081E-17,2.599919E-09,0.04361939,0.9990482
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutConnector_4293190168
+	link = CircularIntake_4293190022
+	link = JetEngine_4293189950
+	sym = MK1Fuselage_4293190112
+	srfN = srfAttach,MK1Fuselage_4293191000
+	attN = top,CircularIntake_4293190022
+	attN = bottom,JetEngine_4293189950
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = strutConnector_4293190168
+	partName = CompoundPart
+	pos = -1.045064,1.908422,-3.840307
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.4771757,-0.5217432,-0.5209231,-0.4782538
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4293190078
+	srfN = srfAttach,MK1Fuselage_4293190202
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4293189348
+		pos = -0.3011872,0.0464638,-0.01035592
+		rot = 0,0,0,0
+		dir = -0.9877378,0.1523831,-0.03396187
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = MK1Fuselage_4293190112
+	partName = Part
+	pos = 1.109426,2.519012,-4.693744
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.3799728,0.5964164,0.5963193,0.3798835
+	attRot = -2.912081E-17,-2.599919E-09,-0.04361939,0.9990482
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutConnector_4293190078
+	link = CircularIntake_4293189986
+	link = JetEngine_4293189868
+	sym = MK1Fuselage_4293190202
+	srfN = srfAttach,MK1Fuselage_4293191000
+	attN = top,CircularIntake_4293189986
+	attN = bottom,JetEngine_4293189868
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 150
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = strutConnector_4293190078
+	partName = CompoundPart
+	pos = 1.045003,1.908422,-3.840306
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.5209233,-0.478254,-0.4771756,-0.5217428
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = strutConnector_4293190168
+	srfN = srfAttach,MK1Fuselage_4293190112
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4293188738
+		pos = -0.3013745,0.04649253,0.01035865
+		rot = 0,0,0,0
+		dir = -0.9877381,0.1523836,0.03396143
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = CircularIntake_4293190022
+	partName = Part
+	pos = -1.109658,2.519053,-3.756246
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,-1.854571E-11,1.854654E-11,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = CircularIntake_4293189986
+	attN = bottom01,MK1Fuselage_4293190202
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleResourceIntake
+		isEnabled = True
+		intakeEnabled = True
+		EVENTS
+		{
+			Deactivate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Close Intake
+				guiName = Close Intake
+				category = Close Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Activate
+			{
+				active = False
+				guiActive = True
+				guiIcon = Open Intake
+				guiName = Open Intake
+				category = Open Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Custom09
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = IntakeAir
+		amount = 0.2
+		maxAmount = 0.2
+		flowState = True
+		isTweakable = False
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = CircularIntake_4293189986
+	partName = Part
+	pos = 1.109595,2.519053,-3.756246
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,2.764666E-12,-2.764016E-12,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = CircularIntake_4293190022
+	attN = bottom01,MK1Fuselage_4293190112
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleResourceIntake
+		isEnabled = True
+		intakeEnabled = True
+		EVENTS
+		{
+			Deactivate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Close Intake
+				guiName = Close Intake
+				category = Close Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Activate
+			{
+				active = False
+				guiActive = True
+				guiIcon = Open Intake
+				guiName = Open Intake
+				category = Open Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Custom09
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = IntakeAir
+		amount = 0.2
+		maxAmount = 0.2
+		flowState = True
+		isTweakable = False
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = JetEngine_4293189950
+	partName = Part
+	pos = -1.109319,2.518962,-6.604148
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,-1.854571E-11,1.854654E-11,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = JetEngine_4293189868
+	attN = top,MK1Fuselage_4293190202
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		thrustPercentage_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement = 0.5
+		}
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Engine
+				guiName = Activate Engine
+				category = Activate Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = False
+				guiActive = True
+				guiIcon = Shutdown Engine
+				guiName = Shutdown Engine
+				category = Shutdown Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = Custom09
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateHeat
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		EVENTS
+		{
+			LockGimbal
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Gimbal
+				guiName = Lock Gimbal
+				category = Lock Gimbal
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			FreeGimbal
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Free Gimbal
+				guiName = Free Gimbal
+				category = Free Gimbal
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = JetEngine_4293189868
+	partName = Part
+	pos = 1.109257,2.518962,-6.604146
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7071068,2.764666E-12,-2.764016E-12,0.7071068
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = JetEngine_4293189950
+	attN = top,MK1Fuselage_4293190112
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		thrustPercentage_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement = 0.5
+		}
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Engine
+				guiName = Activate Engine
+				category = Activate Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = False
+				guiActive = True
+				guiIcon = Shutdown Engine
+				guiName = Shutdown Engine
+				category = Shutdown Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = Custom09
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateHeat
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		EVENTS
+		{
+			LockGimbal
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Gimbal
+				guiName = Lock Gimbal
+				category = Lock Gimbal
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			FreeGimbal
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Free Gimbal
+				guiName = Free Gimbal
+				category = Free Gimbal
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 0
+		maxAmount = 0
+		flowState = True
+		isTweakable = False
+		hideFlow = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = bahaGau-8_4293189786
+	partName = Part
+	pos = -0.05187675,1.430131,0.6852394
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.01403254,6.133786E-10,4.370706E-08,0.9999017
+	attRot = 0.1305262,0,0,0.9914449
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,noseConeAdapter_4293191090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BahaTurret
+		isEnabled = True
+		turretEnabled = False
+		minPitch = 0
+		maxPitch = 0
+		yawRange = 0
+		minPitchLimit = 0
+		maxPitchLimit = 0
+		yawRangeLimit = 0
+		onlyFireInRange = False
+		minPitch_UIFlight
+		{
+			controlEnabled = True
+			minValue = 1
+			maxValue = 0
+			stepIncrement = 1
+		}
+		maxPitch_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 60
+			stepIncrement = 1
+		}
+		yawRange_UIFlight
+		{
+			controlEnabled = True
+			minValue = 1
+			maxValue = 60
+			stepIncrement = 1
+		}
+		onlyFireInRange_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			toggle
+			{
+				active = True
+				guiActive = True
+				guiIcon = Toggle Turret
+				guiName = Toggle Turret
+				category = Toggle Turret
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGToggle
+			{
+				actionGroup = Custom10
+			}
+		}
+	}
+}
+PART
+{
+	part = missileController_4293189666
+	partName = Part
+	pos = -0.417659,1.524991,0.6633159
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.9238796,0.3826835,-2.107343E-08,8.42937E-08
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,Mark2Cockpit_4293191196
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileFire
+		isEnabled = True
+		weaponIndex = 0
+		targetScanInterval = 8
+		guardAngle = 100
+		guardRange = 1500
+		guardMode = False
+		targetMissiles = False
+		team = False
+		targetScanInterval_UIFlight
+		{
+			controlEnabled = True
+			minValue = 1
+			maxValue = 60
+			stepIncrement = 1
+		}
+		guardAngle_UIFlight
+		{
+			controlEnabled = True
+			minValue = 10
+			maxValue = 360
+			stepIncrement = 10
+		}
+		guardRange_UIFlight
+		{
+			controlEnabled = True
+			minValue = 100
+			maxValue = 5000
+			stepIncrement = 100
+		}
+		targetMissiles_UIFlight
+		{
+			controlEnabled = True
+		}
+		team_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiToggleGuardMode
+			{
+				active = True
+				guiActive = True
+				guiIcon = Guard Mode: Off
+				guiName = Guard Mode: Off
+				category = Guard Mode: Off
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire
+				guiName = Fire
+				category = Fire
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			GuiCycle
+			{
+				active = True
+				guiActive = True
+				guiIcon = Next Weapon
+				guiName = Next Weapon
+				category = Next Weapon
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			GuiCycleBack
+			{
+				active = True
+				guiActive = True
+				guiIcon = Previous Weapon
+				guiName = Previous Weapon
+				category = Previous Weapon
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGToggleGuardMode
+			{
+				actionGroup = None
+			}
+			AGToggleTargetType
+			{
+				actionGroup = None
+			}
+			AGToggleTeam
+			{
+				actionGroup = None
+			}
+			AGToggleArm
+			{
+				actionGroup = None
+			}
+			AGFire
+			{
+				actionGroup = Custom02
+			}
+			AGCycle
+			{
+				actionGroup = Custom03
+			}
+			AGCycleBack
+			{
+				actionGroup = Custom01
+			}
+		}
+	}
+}
+PART
+{
+	part = baha30mmAmmo_4293189630
+	partName = Part
+	pos = -3.109108E-05,1.458021,-0.8087356
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -8.742311E-08,1,-8.42937E-08,5.024296E-15
+	attRot = 0,-5.960464E-08,-0.9999999,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,Mark2Cockpit_4293191196
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CFEnable
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = 30x173Ammo
+		amount = 600
+		maxAmount = 600
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = baha30mmAmmo_4293189602
+	partName = Part
+	pos = -3.109919E-05,1.458461,-0.9337639
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -8.42937E-08,0.7071068,-8.42937E-08,-0.7071068
+	attRot = -0.7071067,-4.214685E-08,-0.7071067,-2.296639E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	srfN = srfAttach,Mark2Cockpit_4293191196
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CFEnable
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = 30x173Ammo
+		amount = 600
+		maxAmount = 600
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = IntakeRadialLong_4293189574
+	partName = Part
+	pos = -0.5343212,1.634151,-2.518205
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0008357721,-0.0003897109,-0.573576,0.8191519
+	attRot = 0,-5.194888E-09,-0.08715575,0.9961947
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector2_4293189542
+	link = bahaAdjustableRail_4293189008
+	sym = IntakeRadialLong_4293188964
+	srfN = srfAttach,MK1Fuselage_4293191034
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleResourceIntake
+		isEnabled = True
+		intakeEnabled = True
+		EVENTS
+		{
+			Deactivate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Close Intake
+				guiName = Close Intake
+				category = Close Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Activate
+			{
+				active = False
+				guiActive = True
+				guiIcon = Open Intake
+				guiName = Open Intake
+				category = Open Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Custom09
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = IntakeAir
+		amount = 0.5
+		maxAmount = 1
+		flowState = True
+		isTweakable = False
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = wingConnector2_4293189542
+	partName = Winglet
+	pos = -0.8336663,1.55394,-2.598937
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7072998,-0.000612933,0.0006126227,0.7069134
+	attRot = 7.842069E-17,-7.779971E-09,-0.1305262,0.9914449
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = elevon2_4293189512
+	link = wingConnector3_4293189482
+	link = elevon3_4293189348
+	link = SmallGearBay_4293189318
+	link = bahaAdjustableRail_4293189140
+	link = bahaAdjustableRail_4293189096
+	link = bahaAdjustableRail_4293189052
+	link = strutCube_4293188354
+	sym = wingConnector2_4293188932
+	srfN = srfAttach,IntakeRadialLong_4293189574
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = elevon2_4293189512
+	partName = Part
+	pos = -3.667182,1.554438,-3.541353
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073001,-0.0006123272,0.000612589,0.7069131
+	attRot = -0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon2_4293188902
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = False
+		ignoreYaw = True
+		ignoreRoll = False
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wingConnector3_4293189482
+	partName = Winglet
+	pos = -4.58378,1.553928,-2.605127
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7066535,-0.03144708,-0.03023965,0.7062138
+	attRot = 0,-2.599919E-09,-0.04361939,0.9990482
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector4_4293189452
+	link = StandardCtrlSrf_4293189422
+	link = bahaAdjustableRail_4293189392
+	sym = wingConnector3_4293188872
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = wingConnector4_4293189452
+	partName = Winglet
+	pos = -6.452367,1.717375,-2.606285
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7066534,-0.03144718,-0.03023952,0.7062138
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wingConnector4_4293188842
+	srfN = srfAttach,wingConnector3_4293189482
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = StandardCtrlSrf_4293189422
+	partName = Part
+	pos = -5.455961,1.630885,-3.544125
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7066534,-0.0314469,-0.0302399,0.7062138
+	attRot = 0,0.7071068,-4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = StandardCtrlSrf_4293188812
+	srfN = srfAttach,wingConnector3_4293189482
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = True
+		ignoreRoll = False
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293189392
+	partName = Part
+	pos = -5.053536,1.45901,-2.966586
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.000310833,-0.0008538478,-0.0436189,0.9990481
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAdjustableRail_4293187550
+	link = bahaAdjustableRail_4293187462
+	sym = bahaAdjustableRail_4293188782
+	srfN = srfAttach,wingConnector3_4293189482
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = elevon3_4293189348
+	partName = Part
+	pos = -1.868916,1.553936,-3.538236
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.6755903,0.0008236208,-0.0003834438,-0.737277
+	attRot = -0.7064338,-0.03084357,0.03084357,0.7064338
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon3_4293188738
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = True
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = SmallGearBay_4293189318
+	partName = Part
+	pos = -2.556364,1.276945,-3.534995
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002735331,-0.0008665939,2.151794E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = SmallGearBay_4293188708
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLandingGear
+		isEnabled = True
+		brakesEngaged = False
+		brakesEnabled = True
+		storedGearState = DEPLOYED
+		storedAnimationSpeed = 0
+		storedAnimationTime = 0
+		StartDeployed = True
+		StartDeployed_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			EnableBrakes
+			{
+				active = False
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Enable brakes
+				guiName = Enable brakes
+				category = Enable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableBrakes
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Disable brakes
+				guiName = Disable brakes
+				category = Disable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LowerLandingGear
+			{
+				active = False
+				guiActive = True
+				guiIcon = Lower Gear
+				guiName = Lower Gear
+				category = Lower Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RaiseLandingGear
+			{
+				active = True
+				guiActive = True
+				guiIcon = Raise Gear
+				guiName = Raise Gear
+				category = Raise Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = Gear
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleSteering
+		isEnabled = True
+		steeringLocked = True
+		invertSteering = False
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		lightR_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightG_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightB_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		EVENTS
+		{
+			LightsOff
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights Off
+				guiName = Lights Off
+				category = Lights Off
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LightsOn
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights On
+				guiName = Lights On
+				category = Lights On
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293189140
+	partName = Part
+	pos = -4.233501,1.418381,-2.967544
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002736174,-0.0008665919,2.152617E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAGM-114_4293186926
+	link = bahaAGM-114_4293186766
+	link = bahaAGM-114_4293186606
+	sym = bahaAdjustableRail_4293188530
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293189096
+	partName = Part
+	pos = -3.327271,1.418374,-2.964108
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002736174,-0.0008665919,2.152617E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAGM-65_4293187086
+	sym = bahaAdjustableRail_4293188486
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293189052
+	partName = Part
+	pos = -1.742627,1.418384,-2.968202
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002736174,-0.0008665919,2.152617E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaMk82Bomb_4293187642
+	sym = bahaAdjustableRail_4293188442
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293189008
+	partName = Part
+	pos = -0.6943514,1.381071,-2.951341
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0004611287,0.000798572,-4.305235E-07,-0.9999996
+	attRot = -0.1227878,0.1227878,-0.6963642,-0.6963642
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaMk82BombBrake_4293187934
+	sym = bahaAdjustableRail_4293188398
+	srfN = srfAttach,IntakeRadialLong_4293189574
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.12
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = IntakeRadialLong_4293188964
+	partName = Part
+	pos = 0.5342592,1.634151,-2.518205
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0008357721,0.0003897109,0.573576,0.8191519
+	attRot = 0,5.194888E-09,0.08715575,0.9961947
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector2_4293188932
+	link = bahaAdjustableRail_4293188398
+	sym = IntakeRadialLong_4293189574
+	srfN = srfAttach,MK1Fuselage_4293191034
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleResourceIntake
+		isEnabled = True
+		intakeEnabled = True
+		EVENTS
+		{
+			Deactivate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Close Intake
+				guiName = Close Intake
+				category = Close Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Activate
+			{
+				active = False
+				guiActive = True
+				guiIcon = Open Intake
+				guiName = Open Intake
+				category = Open Intake
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Custom09
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = IntakeAir
+		amount = 0.5
+		maxAmount = 1
+		flowState = True
+		isTweakable = False
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = wingConnector2_4293188932
+	partName = Winglet
+	pos = 0.8336042,1.55394,-2.598937
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0006125643,0.7069131,0.7073001,-0.0006130548
+	attRot = 7.842069E-17,-7.779971E-09,-0.1305262,0.9914449
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = elevon2_4293188902
+	link = wingConnector3_4293188872
+	link = elevon3_4293188738
+	link = SmallGearBay_4293188708
+	link = bahaAdjustableRail_4293188530
+	link = bahaAdjustableRail_4293188486
+	link = bahaAdjustableRail_4293188442
+	link = strutCube_4293188334
+	sym = wingConnector2_4293189542
+	srfN = srfAttach,IntakeRadialLong_4293188964
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = elevon2_4293188902
+	partName = Part
+	pos = 3.667127,1.55445,-3.541342
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0006125158,0.7069131,0.7073001,-0.0006123858
+	attRot = -0.7071068,0,0,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon2_4293189512
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = False
+		ignoreYaw = True
+		ignoreRoll = False
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = wingConnector3_4293188872
+	partName = Winglet
+	pos = 4.583728,1.553941,-2.605119
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.03023974,0.7062137,0.7066535,-0.03144711
+	attRot = 0,-2.599919E-09,-0.04361939,0.9990482
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = wingConnector4_4293188842
+	link = StandardCtrlSrf_4293188812
+	link = bahaAdjustableRail_4293188782
+	sym = wingConnector3_4293189482
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = wingConnector4_4293188842
+	partName = Winglet
+	pos = 6.452339,1.717402,-2.606273
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.03023954,0.7062134,0.7066537,-0.03144717
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = wingConnector4_4293189452
+	srfN = srfAttach,wingConnector3_4293188872
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = StandardCtrlSrf_4293188812
+	partName = Part
+	pos = 5.45592,1.6309,-3.54412
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7066537,0.03144687,0.0302399,0.7062134
+	attRot = 0,0.7071068,-4.214685E-08,0.7071068
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = StandardCtrlSrf_4293189422
+	srfN = srfAttach,wingConnector3_4293188872
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = True
+		ignoreRoll = False
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293188782
+	partName = Part
+	pos = 5.053488,1.459021,-2.966582
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0003107487,0.0008537885,0.04361898,0.9990481
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAdjustableRail_4293187506
+	link = bahaAdjustableRail_4293187418
+	sym = bahaAdjustableRail_4293189392
+	srfN = srfAttach,wingConnector3_4293188872
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = elevon3_4293188738
+	partName = Part
+	pos = 1.868854,1.553941,-3.538229
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0003834783,0.7372766,0.6755906,-0.0008236694
+	attRot = -0.7064338,-0.03084357,0.03084357,0.7064338
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = elevon3_4293189348
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		ignorePitch = True
+		ignoreYaw = True
+		ignoreRoll = True
+		ignorePitch_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreYaw_UIFlight
+		{
+			controlEnabled = True
+		}
+		ignoreRoll_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = SmallGearBay_4293188708
+	partName = Part
+	pos = 2.556303,1.276949,-3.534984
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002737859,0.0008665937,-1.323263E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = SmallGearBay_4293189318
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLandingGear
+		isEnabled = True
+		brakesEngaged = False
+		brakesEnabled = True
+		storedGearState = DEPLOYED
+		storedAnimationSpeed = 0
+		storedAnimationTime = 0
+		StartDeployed = True
+		StartDeployed_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			EnableBrakes
+			{
+				active = False
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Enable brakes
+				guiName = Enable brakes
+				category = Enable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DisableBrakes
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Disable brakes
+				guiName = Disable brakes
+				category = Disable brakes
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LowerLandingGear
+			{
+				active = False
+				guiActive = True
+				guiIcon = Lower Gear
+				guiName = Lower Gear
+				category = Lower Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			RaiseLandingGear
+			{
+				active = True
+				guiActive = True
+				guiIcon = Raise Gear
+				guiName = Raise Gear
+				category = Raise Gear
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = Gear
+			}
+			BrakesAction
+			{
+				actionGroup = Brakes
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleSteering
+		isEnabled = True
+		steeringLocked = True
+		invertSteering = False
+		EVENTS
+		{
+			UnLockSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Unlock Steering
+				guiName = Unlock Steering
+				category = Unlock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LockSteering
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lock Steering
+				guiName = Lock Steering
+				category = Lock Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			InvertSteering
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Invert Steering
+				guiName = Invert Steering
+				category = Invert Steering
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			InvertSteeringAction
+			{
+				actionGroup = None
+			}
+			LockSteeringAction
+			{
+				actionGroup = None
+			}
+			UnlockSteeringAction
+			{
+				actionGroup = None
+			}
+			ToggleSteeringAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = FXModuleConstrainPosition
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		lightR_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightG_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		lightB_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 1
+			stepIncrement = 0.05
+		}
+		EVENTS
+		{
+			LightsOff
+			{
+				active = False
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights Off
+				guiName = Lights Off
+				category = Lights Off
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			LightsOn
+			{
+				active = True
+				guiActive = True
+				guiActiveEditor = True
+				guiIcon = Lights On
+				guiName = Lights On
+				category = Lights On
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293188530
+	partName = Part
+	pos = 4.233452,1.418388,-2.967541
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002737438,0.0008665922,-2.153441E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAGM-114_4293186846
+	link = bahaAGM-114_4293186686
+	link = bahaAGM-114_4293186526
+	sym = bahaAdjustableRail_4293189140
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293188486
+	partName = Part
+	pos = 3.327215,1.418381,-2.964105
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002737438,0.0008665922,-2.153441E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAGM-65_4293187006
+	sym = bahaAdjustableRail_4293189096
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293188442
+	partName = Part
+	pos = 1.742569,1.418391,-2.968197
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0002737438,0.0008665922,-2.153441E-07,0.9999998
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaMk82Bomb_4293187596
+	sym = bahaAdjustableRail_4293189052
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.16
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293188398
+	partName = Part
+	pos = 0.6942888,1.381071,-2.951341
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0004611287,0.000798572,-4.305235E-07,0.9999996
+	attRot = -0.1227878,0.1227878,-0.6963642,-0.6963642
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaMk82BombBrake_4293187788
+	sym = bahaAdjustableRail_4293189008
+	srfN = srfAttach,IntakeRadialLong_4293188964
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = -0.12
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = strutCube_4293188354
+	partName = Part
+	pos = -2.546843,1.331551,-2.803075
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.9999998,2.149736E-07,0.0008665713,-0.0002732802
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutCube_4293188314
+	sym = strutCube_4293188334
+	srfN = srfAttach,wingConnector2_4293189542
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = strutCube_4293188334
+	partName = Part
+	pos = 2.546779,1.331561,-2.803072
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.9999998,-1.321205E-07,-0.0008665711,-0.0002735331
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = strutCube_4293188238
+	sym = strutCube_4293188354
+	srfN = srfAttach,wingConnector2_4293188932
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = strutCube_4293188314
+	partName = Part
+	pos = -2.54666,1.327575,-2.567412
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0006133798,0.7069132,0.7073002,0.0006131725
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = miniFuelTank_4293188294
+	link = bahaCmPod_4293187994
+	sym = strutCube_4293188238
+	srfN = srfAttach,strutCube_4293188354
+	attN = top,miniFuelTank_4293188294
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188294
+	partName = Part
+	pos = -2.547193,1.327413,-2.264401
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073001,-0.0006133287,0.000613155,0.7069133
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = miniFuelTank_4293188266
+	link = miniFuelTank_4293188162
+	sym = miniFuelTank_4293188218
+	attN = top,miniFuelTank_4293188266
+	attN = bottom,miniFuelTank_4293188162
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188266
+	partName = Part
+	pos = -2.547801,1.327227,-1.915851
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073005,-0.0006132699,0.0006131798,0.7069129
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293188050
+	sym = miniFuelTank_4293188190
+	attN = top,standardNoseCone_4293188050
+	attN = bottom,miniFuelTank_4293188294
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = strutCube_4293188238
+	partName = Part
+	pos = 2.5466,1.32758,-2.567408
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0006135065,0.7069135,0.7072999,-0.0006129676
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = miniFuelTank_4293188218
+	link = miniFuelTank_4293188134
+	link = bahaCmPod_4293187964
+	sym = strutCube_4293188314
+	srfN = srfAttach,strutCube_4293188334
+	attN = top,miniFuelTank_4293188134
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188218
+	partName = Part
+	pos = 2.547129,1.327421,-2.264401
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073005,0.0006134358,-0.000613082,0.7069129
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = miniFuelTank_4293188190
+	sym = miniFuelTank_4293188294
+	attN = top,miniFuelTank_4293188190
+	attN = bottom,strutCube_4293188238
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188190
+	partName = Part
+	pos = 2.547739,1.327231,-1.915848
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073011,0.000613333,-0.0006133024,0.7069123
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293188022
+	sym = miniFuelTank_4293188266
+	attN = top,standardNoseCone_4293188022
+	attN = bottom,miniFuelTank_4293188218
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188162
+	partName = Part
+	pos = -2.546586,1.327608,-2.61295
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073005,-0.0006132698,0.0006131553,0.7069129
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293188106
+	sym = miniFuelTank_4293188134
+	attN = top,miniFuelTank_4293188294
+	attN = bottom,standardNoseCone_4293188106
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = miniFuelTank_4293188134
+	partName = Part
+	pos = 2.546522,1.32761,-2.612949
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.7073006,0.0006134455,-0.0006130089,0.7069128
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = standardNoseCone_4293188078
+	sym = miniFuelTank_4293188162
+	attN = top,strutCube_4293188238
+	attN = bottom,standardNoseCone_4293188078
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 0
+		maxAmount = 5.735
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = standardNoseCone_4293188106
+	partName = Part
+	pos = -2.545982,1.327794,-2.959728
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0006132452,0.7073008,-0.7069126,0.0006131801
+	attRot = 0,0.9999999,-5.960464E-08,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = standardNoseCone_4293188078
+	attN = bottom01,miniFuelTank_4293188162
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = standardNoseCone_4293188078
+	partName = Part
+	pos = 2.54592,1.327797,-2.959725
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0006133528,0.7073005,-0.7069129,-0.0006132139
+	attRot = 0,-0.9999999,5.960464E-08,-1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = standardNoseCone_4293188106
+	attN = bottom01,miniFuelTank_4293188134
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = standardNoseCone_4293188050
+	partName = Part
+	pos = -2.5484,1.327039,-1.569075
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0006132143,0.7069125,0.7073009,0.0006132793
+	attRot = -2.512148E-15,5.960464E-08,0.9999999,1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = standardNoseCone_4293188022
+	attN = bottom01,miniFuelTank_4293188266
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = standardNoseCone_4293188022
+	partName = Part
+	pos = 2.548344,1.327044,-1.569074
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0006131164,0.7069128,0.7073005,-0.0006132551
+	attRot = 2.512148E-15,-5.960464E-08,-0.9999999,1.776357E-15
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = standardNoseCone_4293188050
+	attN = bottom01,miniFuelTank_4293188190
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
+	part = bahaCmPod_4293187994
+	partName = Part
+	pos = -2.55202,1.110645,-2.560621
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.9999999,-4.009713E-07,0.0008672522,-0.0002728166
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaCmPod_4293187964
+	srfN = srfAttach,strutCube_4293188314
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CMDropper
+		isEnabled = True
+		EVENTS
+		{
+			DropCM
+			{
+				active = True
+				guiActive = True
+				guiIcon = Drop Countermeasure
+				guiName = Drop Countermeasure
+				category = Drop Countermeasure
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGDropCM
+			{
+				actionGroup = Custom04
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = Countermeasure
+		amount = 40
+		maxAmount = 40
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = bahaCmPod_4293187964
+	partName = Part
+	pos = 2.551958,1.11065,-2.560621
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.9999998,4.97942E-07,-0.0008672821,-0.0002736595
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaCmPod_4293187994
+	srfN = srfAttach,strutCube_4293188238
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = CMDropper
+		isEnabled = True
+		EVENTS
+		{
+			DropCM
+			{
+				active = True
+				guiActive = True
+				guiIcon = Drop Countermeasure
+				guiName = Drop Countermeasure
+				category = Drop Countermeasure
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGDropCM
+			{
+				actionGroup = Custom04
+			}
+		}
+	}
+	RESOURCE
+	{
+		name = Countermeasure
+		amount = 40
+		maxAmount = 40
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = bahaMk82BombBrake_4293187934
+	partName = Part
+	pos = -0.6943516,1.056311,-3.020387
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0,-9.125127E-11,-1.082788E-07,-1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaMk82BombBrake_4293187788
+	srfN = srfAttach,bahaAdjustableRail_4293189008
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.4
+		decoupleSpeed = 2
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaMk82BombBrake_4293187788
+	partName = Part
+	pos = 0.6942888,1.056311,-3.020387
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0,-9.125127E-11,-1.082788E-07,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaMk82BombBrake_4293187934
+	srfN = srfAttach,bahaAdjustableRail_4293188398
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.4
+		decoupleSpeed = 2
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaMk82Bomb_4293187642
+	partName = Part
+	pos = -1.742626,1.05358,-3.071027
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 2.107343E-07,6.288086E-10,9.094798E-09,-1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaMk82Bomb_4293187596
+	srfN = srfAttach,bahaAdjustableRail_4293189052
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 3
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaMk82Bomb_4293187596
+	partName = Part
+	pos = 1.742567,1.053581,-3.071016
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 4.214685E-08,5.499544E-10,-1.229201E-07,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaMk82Bomb_4293187642
+	srfN = srfAttach,bahaAdjustableRail_4293188442
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 3
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293187550
+	partName = Part
+	pos = -4.983541,1.270117,-2.906912
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0003839578,0.0008233177,-0.6755899,-0.7372774
+	attRot = 1.040565E-15,-4.214684E-08,-0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAim9_4293187374
+	sym = bahaAdjustableRail_4293187506
+	srfN = srfAttach,bahaAdjustableRail_4293189392
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = 0
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293187506
+	partName = Part
+	pos = 4.983486,1.270129,-2.906905
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0003839578,0.000823423,-0.6755903,0.7372771
+	attRot = -1.040565E-15,4.214684E-08,0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAim9_4293187302
+	sym = bahaAdjustableRail_4293187550
+	srfN = srfAttach,bahaAdjustableRail_4293188782
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = 0
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293187462
+	partName = Part
+	pos = -5.155876,1.280321,-2.921636
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.000823402,0.0003842528,0.7372773,-0.6755899
+	attRot = 3.552713E-15,4.214684E-08,0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAim9_4293187230
+	sym = bahaAdjustableRail_4293187418
+	srfN = srfAttach,bahaAdjustableRail_4293189392
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = 0
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAdjustableRail_4293187418
+	partName = Part
+	pos = 5.15582,1.280335,-2.921628
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0008238445,0.0003839578,0.7372772,0.6755902
+	attRot = -3.552713E-15,-4.214684E-08,-0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = bahaAim9_4293187158
+	sym = bahaAdjustableRail_4293187462
+	srfN = srfAttach,bahaAdjustableRail_4293188782
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = BDAdjustableRail
+		isEnabled = True
+		railHeight = 0
+		railLength = 1
+		EVENTS
+		{
+			IncreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height ++
+				guiName = Height ++
+				category = Height ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseHeight
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Height --
+				guiName = Height --
+				category = Height --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			IncreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length ++
+				guiName = Length ++
+				category = Length ++
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			DecreaseLength
+			{
+				active = True
+				guiActive = False
+				guiActiveEditor = True
+				guiIcon = Length --
+				guiName = Length --
+				category = Length --
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = bahaAim9_4293187374
+	partName = Part
+	pos = -4.853138,1.270119,-2.934684
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.0006129417,-0.0006125834,0.7071063,0.7071071
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAim9_4293187302
+	srfN = srfAttach,bahaAdjustableRail_4293187550
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAim9_4293187302
+	partName = Part
+	pos = 4.853085,1.270125,-2.93468
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.000612752,0.0006129417,-0.7071064,0.7071071
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAim9_4293187374
+	srfN = srfAttach,bahaAdjustableRail_4293187506
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAim9_4293187230
+	partName = Part
+	pos = -5.286101,1.280318,-2.936494
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0005670859,-0.0006188633,-0.707107,0.7071065
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAim9_4293187158
+	srfN = srfAttach,bahaAdjustableRail_4293187462
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAim9_4293187158
+	partName = Part
+	pos = 5.286046,1.280332,-2.936487
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.0005669384,0.0006188001,0.7071072,0.7071062
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAim9_4293187230
+	srfN = srfAttach,bahaAdjustableRail_4293187418
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-65_4293187086
+	partName = Part
+	pos = -3.327271,1.039952,-2.761655
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 8.42937E-08,9.63861E-10,-7.401913E-08,-1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-65_4293187006
+	srfN = srfAttach,bahaAdjustableRail_4293189096
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.1
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-65_4293187006
+	partName = Part
+	pos = 3.327211,1.039955,-2.761653
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -4.214685E-08,4.338128E-10,-8.869869E-08,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-65_4293187086
+	srfN = srfAttach,bahaAdjustableRail_4293188486
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.1
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186926
+	partName = Part
+	pos = -4.233501,1.100707,-2.894113
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 8.42937E-08,9.63861E-10,-7.401913E-08,-1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186846
+	srfN = srfAttach,bahaAdjustableRail_4293189140
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.1
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186846
+	partName = Part
+	pos = 4.233445,1.100716,-2.894109
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -4.214685E-08,4.338128E-10,-8.869869E-08,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186926
+	srfN = srfAttach,bahaAdjustableRail_4293188530
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.1
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186766
+	partName = Part
+	pos = -4.091097,1.230798,-2.731202
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.001092257,0,0.7933525,0.6087618
+	attRot = 1.040566E-15,-4.214685E-08,-0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186686
+	srfN = srfAttach,bahaAdjustableRail_4293189140
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186686
+	partName = Part
+	pos = 4.091046,1.230804,-2.7312
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.001092236,0,-0.7933526,0.6087618
+	attRot = -1.040566E-15,4.214685E-08,0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186766
+	srfN = srfAttach,bahaAdjustableRail_4293188530
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186606
+	partName = Part
+	pos = -4.375662,1.231696,-2.755504
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = -0.001092172,0,0.7933527,-0.6087617
+	attRot = -2.994714E-22,4.214684E-08,0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186526
+	srfN = srfAttach,bahaAdjustableRail_4293189140
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = bahaAGM-114_4293186526
+	partName = Part
+	pos = 4.375609,1.231704,-2.755501
+	attPos = 0,0,0
+	attPos0 = 0,0,0
+	rot = 0.001092299,8.42937E-08,0.7933527,0.6087617
+	attRot = 2.994714E-22,-4.214684E-08,-0.7071067,-0.7071067
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Mirror
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = bahaAGM-114_4293186606
+	srfN = srfAttach,bahaAdjustableRail_4293188530
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = MissileLauncher
+		isEnabled = True
+		dropTime = 0.05
+		decoupleSpeed = 0
+		decoupleForward = False
+		dropTime_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 2
+			stepIncrement = 0.1
+		}
+		decoupleSpeed_UIEditor
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 8
+			stepIncrement = 0.5
+		}
+		decoupleForward_UIFlight
+		{
+			controlEnabled = True
+		}
+		EVENTS
+		{
+			GuiFire
+			{
+				active = True
+				guiActive = True
+				guiIcon = Fire Missile
+				guiName = Fire Missile
+				category = Fire Missile
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			AGFire
+			{
+				actionGroup = None
+			}
+		}
+	}
+}

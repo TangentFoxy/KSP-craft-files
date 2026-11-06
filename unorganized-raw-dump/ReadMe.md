@@ -1,0 +1,1 @@
+Everything in this directory wwas downloaded in order from newest to oldest from KerbalX directly. As a result, files with duplicate names are ordered the reverse of how they were named on KerbalX. This will be fixed, along with organization, when I'm not horrifically exhausted.
