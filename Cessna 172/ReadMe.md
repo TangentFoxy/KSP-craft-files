@@ -4,6 +4,7 @@ These craft are mostly inspired by Messier 82's video [I asked 4,000 people to m
 - Cessna Monster Truck: [KSP - a monster truck Cessna AND THE JETSSNA!](https://www.youtube.com/watch?v=NBRD-FvDoZM)
 - Jetssna: [KSP - a monster truck Cessna AND THE JETSSNA!](https://www.youtube.com/watch?v=NBRD-FvDoZM)
 - Kessna 172: [Building a Cessna 172 in Kerbal Space Program](https://www.youtube.com/watch?v=i4rdbUYF118)
+- Spacena: [Reentering with a Cessna 172](https://www.youtube.com/watch?v=jhaIR3M6tnE)
 
 ---
 
